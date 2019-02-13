@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <style>
+        .jumbotron{
+            margin: 0px;
+            text-align: center;
+        }
+        .navbar-nav{
+            margin:0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 巨幕 -->
+    <div class="jumbotron">
+        <h1>WordPress</h1>
+    </div>
+    <!-- 巨幕 end -->
+    <!-- 导航条 -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- 导航条 end -->
+    <div class="container">
+        <div class="row">
+            <!-- 左边数据列表 -->
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>标题<small class="pull-right">2018/12/12 11:11:11</small></h2>
+                    </div>
+                    <div class="panel-body">
+                        内容Panel content
+                        内容Panel content
+                        内容Panel content
+                        内容Panel content
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>标题<small class="pull-right">2018/12/12 11:11:11</small></h2>
+                    </div>
+                    <div class="panel-body">
+                        内容Panel content
+                        内容Panel content
+                        内容Panel content
+                        内容Panel content
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>标题<small class="pull-right">2018/12/12 11:11:11</small></h2>
+                    </div>
+                    <div class="panel-body">
+                        内容Panel content
+                        内容Panel content
+                        内容Panel content
+                        内容Panel content
+                    </div>
+                </div>
+            </div>
+            <!-- 右边登陆 -->
+            <div class="col-md-4">
+                <form>
+                    <h3>登陆</h3>
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input type="text" class="form-control" name="username" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">登陆</button>
+                    <a class="btn btn-form">注册账户</a>
+                </form>
+                <form style="display:none;">
+                    <h3>注册</h3>
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input type="text" class="form-control" name="username" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">确认密码</label>
+                        <input type="password" class="form-control" name="password2" placeholder="Password">
+                    </div>
+
+                    <button type="submit" class="btn btn-default">注册</button>
+                    <a class="btn btn-form">登陆用户</a>
+                </form>
+                <h3>用户名：Admin</h3>
+                <h4><a href="/admin/login">管理后台</a></h4>
+                <h4><a href="/out">退出登陆</a></h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../../public/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $(".btn-form").click(function () {
+            $(this).parent().hide().siblings("form").show();
+        })
+    })
+</script>
+
+</html>

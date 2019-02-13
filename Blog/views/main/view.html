@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .jumbotron{
+            margin: 0px;
+            text-align: center;
+        }
+        .navbar-nav{
+            margin:0 auto;
+        }
+        h1,h4{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <%- include("nav.html") -%>
+
+    <div class="container">
+        <div class="row">
+            <!-- 左边数据列表 -->
+            <div class="col-md-8">
+                <h1><%=content.title%></h1>
+                <h4><%=content.addTime%></h4>
+                <div>
+                    <%-content.description%>
+                </div>
+                <div>
+                    <%-content.content%>
+                </div>
+            </div>
+            <!-- 右边登陆 -->
+            <div class="col-md-4">
+                <%- include("login.html") -%>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    $(function () {
+        $(".btn-form").click(function () {
+            $(this).parent().hide().siblings("form").show();
+        })
+    })
+</script>
+
+</html>

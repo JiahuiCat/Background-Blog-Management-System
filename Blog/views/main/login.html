@@ -1,0 +1,50 @@
+    
+    <% if(userInfo){%>
+        
+    <div class="userInfo">
+        <h3>用户名：<span data-id=''><%=userInfo.username%></span></h3>
+        <%if(userInfo.isAdmin){%>
+        <h4><a href="/admin">管理后台</a></h4>
+        <%}%>
+        <h4><a href="javascript:;"  id="out">退出登陆</a></h4>
+    </div>
+    <% }else{ %>
+    <form>
+        <h3>登陆</h3>
+        <div class="form-group">
+            <label>用户名</label>
+            <input type="text" class="form-control" name="username" placeholder="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-default" id="login">登陆</button>
+        <a class="btn btn-form">注册账户</a>
+    </form>
+    <form style="display:none;">
+        <h3>注册</h3>
+        <div class="form-group">
+            <label>用户名</label>
+            <input type="text" class="form-control" name="username" placeholder="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">确认密码</label>
+            <input type="password" class="form-control" name="password2" placeholder="Password">
+        </div>
+
+        <button type="button" class="btn btn-default" id="zhuce">注册</button>
+        <a class="btn btn-form">登陆用户</a>
+    </form>
+    <div class="userInfo" style="display: none">
+        <h3>用户名：<span data-id=''></span></h3>
+        <h4><a href="/admin">管理后台</a></h4>
+        <h4><a href="javascript:;" id="out">退出登陆</a></h4>
+    </div>
+    <%}%>
+
+    <script src="/js/login.js"></script>

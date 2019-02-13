@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .jumbotron{
+            margin: 0px;
+            text-align: center;
+        }
+        .navbar-nav{
+            margin:0 auto;
+        }
+        .conterta{
+            float: right;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <%- include("nav.html") -%>
+
+    <div class="container">
+        <div class="row">
+            <!-- 左边数据列表 -->
+            <div class="col-md-8">
+                <% for(var i = 0;i < contents.length;i++){%>
+                <div class="panel panel-default clearfix">
+                    <div class="panel-heading">
+                        <h2><%=contents[i].title%><small class="pull-right"><%=contents[i].addTime%></small></h2>
+                    </div>
+                    <div class="panel-body">
+                        <!-- markdown插件所以需要考虑标签转义 ejs解决方案 <%- %> -->
+                        <%- contents[i].description%>
+
+                    </div>
+                    <a class="conterta" href="/view/?contentid=<%=contents[i].id%>">更多内容。。。</a>
+                </div>
+                <% } %>
+            </div>
+            <!-- 右边登陆 -->
+            <div class="col-md-4">
+                <%- include("login.html") -%>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    $(function () {
+        $(".btn-form").click(function () {
+            $(this).parent().hide().siblings("form").show();
+        })
+    })
+</script>
+
+</html>
